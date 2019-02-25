@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="/styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  
+  <body>
+    
+    <div class="main-container">  
+    
+      <div id="main-part" class="full-width">
+        <h1 id="status-bar"></h1>
+        
+        <div id="cards-list">
+          
+          <div id="card-template" class="card">
+            <p class="card-number"></p>
+            <p class="card-comment"></p>
+          </div>
+        
+          <button id="button-show-creating-panel" type="button" class="button card" onclick="App.Show_creating_panel()">+ Add card</button>
+        </div>
+      </div>
+      
+      <div id="side-panel" class="hidden">
+        <a href="javascript:void(0)" id="button-hide-panel" onclick="App.Hide_panel()">&times;</a>
+        
+        <div id="card-creating" class="side-panel-wrapper">
+          <h2>Card adding</h2>
+          <input type="text" id="input-creating-card-number" oninput="App.Validate_card_input()">
+          <textarea type="text" id="textarea-creating-card-comment"></textarea>
+          <button id="button-create-card" type="button" class="button" onclick="App.Create_card()">Create card</button>
+        </div>
+        
+        <div id="card-info" class="side-panel-wrapper">
+            <h2>Card info</h2>
+            <p id="card-info-number"></p>
+            <textarea id="card-info-comment" readonly></textarea>
+            
+            <button id="button-delete-card" type="button" class="button" onclick="App.Show_deleting_confirmation_for_info_panel()">Delete card</button>
+            
+            <div id="card-deleting-confirmation">
+              <p>Delete the card?</p>
+              <div class="deleting-confirmation-buttons-wrapper">
+                <button id="button-card-deleting-approve" type="button" class="button" onclick="App.Delete_card()">OK</button>
+                <button id="button-card-deleting-disapprove" type="button" class="button button-cancel" onclick="App.Hide_deleting_confirmation_for_info_panel()">Cancel</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div> 
+  
+    <script src="/scripts/creditcard.js"></script>
+    
+    <script src="/scripts/app_settings.js"></script>
+    <script src="/scripts/common.js"></script>
+    <script src="/scripts/cards_list.js"></script>
+    <script src="/scripts/html_cards_list.js"></script>
+    <script src="/scripts/status_bar.js"></script>
+    <script src="/scripts/app.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,244 @@
+html,
+body {
+    height:100%;
+    margin:0;
+    background-color: #D3D3D3;
+}
+
+.main-container {
+    height:100%;
+    overflow: hidden;
+    
+}
+
+#main-part {
+  background-color: #FFF;
+  float: left;
+  height: 100%;
+  transition: width 0.4s;
+  width: calc(100% - 250px);
+}
+
+#main-part.full-width {
+  width: 100%;
+}
+
+#main-part h1#status-bar {
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+#main-part h1#status-bar.error {
+  background-color: red;
+}
+
+#main-part #cards-list {
+  align-content: flex-start;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 99%;
+  overflow: auto;
+}
+
+#cards-list #card-template {
+  display: none;
+}
+
+button.button {
+  box-sizing: content-box;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+#cards-list button.button.card {
+  background-color: #E2E3E2;
+  background-image: none !important;
+  order: -1;
+}
+
+#cards-list button.button.card:hover {
+  background-color: #4CAF50;  
+  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #4CAF50;
+}
+
+#cards-list .card {
+  background-color: #BDB76B;
+  background-size: contain;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#cards-list.card:hover {
+  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #3A2F28;
+  transition: .1s linear;
+}
+
+#cards-list .card.card-selected {
+  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #FF0000;  
+}
+
+#cards-list .card p {
+  cursor: default;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+#cards-list .card p.card-comment {
+  font-size: 10px;
+  padding: 0 10px;
+  text-align: left;
+}
+
+
+#side-panel {
+  background-color: #D3D3D3;
+  width: 249px;
+  float: right;
+  height: 100%;
+  
+}
+ 
+#side-panel.hidden {
+  display: none;
+}
+
+#side-panel #card-adding {
+  display: block;
+}
+
+#side-panel #card-info {
+  display: block;
+}
+
+#side-panel .hidden {
+  display: none !important;
+}
+
+#side-panel a#button-hide-panel {
+  color: #818181;
+  display: block;
+  font-size: 36px;
+  margin-left: 50px;
+  position: absolute;
+  right: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+  top: 12px;
+}
+
+#side-panel a#button-hide-panel:hover {
+  color: #f1f1f1;
+}
+
+#side-panel h2 {
+  margin-right: 50px;
+}
+
+#side-panel .side-panel-wrapper {
+  margin: auto;
+  width: 80%;
+}
+
+#side-panel .side-panel-wrapper button,
+#side-panel .side-panel-wrapper input,
+#side-panel .side-panel-wrapper p,
+#side-panel .side-panel-wrapper textarea {
+  margin: 5px 0;
+  padding: 0;
+  width: 100%;
+}
+
+#side-panel .side-panel-wrapper textarea#card-info-comment {
+  background-color: #D3D3D3;
+}
+
+#side-panel .side-panel-wrapper .button {
+  background-color: #4CAF50;
+  font-size: 18px;
+  height: 26px;
+}
+
+#side-panel .side-panel-wrapper .button-cancel {
+  background-color: #909090;
+}
+
+#side-panel .side-panel-wrapper .button:disabled {
+  background-color: #E2E3E2;
+  cursor: not-allowed;
+}
+
+#side-panel .side-panel-wrapper input.error {
+  border: 2px solid red;
+}
+
+#side-panel .deleting-confirmation-buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-basis: 10%;
+}
+
+#side-panel .deleting-confirmation-buttons-wrapper .button {
+  width: 33%;
+}
+
+
+@media screen and (max-width: 699px) {
+  #main-part h1#status-bar {
+    font-size: 12px;
+  }
+  
+  #cards-list .card {
+      background-image: none;
+      flex: 0 1 auto;
+      font-size: 9px;
+      height: 56px;
+      width: 85px;
+  }
+  
+  #cards-list .card.Mastercard {
+    background-color: #7F7F7F;   
+  }
+
+  #cards-list .card.Visa {
+    background-color: #99D9EA;   
+  }
+  
+  #cards-list .card p.card-number {
+    display: table-cell;
+    height: inherit;
+    vertical-align: middle;
+    width: inherit;
+  }
+  
+  #cards-list .card p.card-comment {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #main-part h1#status-bar {
+    font-size: 20px;
+  }
+  
+  #cards-list .card {
+      flex: 0 1 auto;
+      font-size: 18px;
+      height: 112px;
+      width: 170px;
+  }
+  #cards-list .card.Mastercard {
+    background-image: url("/images/mastercard.png");  
+  }
+
+  #cards-list .card.Visa {
+    background-image: url("/images/visa.png");   
+  }
+}
