@@ -235,10 +235,10 @@ button.button {
       width: 170px;
   }
   #cards-list .card.Mastercard {
-    background-image: url("/images/mastercard.png");  
+    background-image: url("/github.io/images/mastercard.png");  
   }
 
   #cards-list .card.Visa {
-    background-image: url("/images/visa.png");   
+    background-image: url("/github.io/images/visa.png");   
   }
 }
