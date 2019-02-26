@@ -1,6 +1,9 @@
 # github.io
 test-cards-list
 
+Сторонняя библиотека по работе с банковскими картами - "creditcard.js"
+
+
 valid test card numbers
 
 http://www.getcreditcardnumbers.com/
